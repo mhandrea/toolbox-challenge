@@ -7,15 +7,18 @@ var prev_img = null;
 var yes = 0;
 var no = 0;
 var remain = 8;
+var timer = null;
 var i; // for use in for loops.
 
-for (i = 1; i <= 32; i++) {
-	tiles.push({
-		num: i,
-		src: 'img/tile' + i + '.jpg',
-		clicked: false,
-		matched: false
-	});
+function prepare_list() {
+	for (i = 1; i <= 32; i++) {
+		tiles.push({
+			num: i,
+			src: 'img/tile' + i + '.jpg',
+			clicked: false,
+			matched: false
+		});
+	}
 }
 
 function stats(miss, remain, match) {
@@ -26,8 +29,8 @@ function stats(miss, remain, match) {
 
 $(document).ready(function() {
 	$('#start').click(function() {
-		$('#board').empty();
-
+		prepare_list();
+		$('#won').css('visibility', 'hidden');
 		console.log('start pressed');
 		tiles = _.shuffle(tiles);
 		var pairs = [];
@@ -62,7 +65,16 @@ $(document).ready(function() {
 		no = 0;
 		remain = 8;
 
+		// setup the timer
+		var start = Date.now();
+		timer = window.setInterval(function() {
+			var time_pass = Math.floor((Date.now() - start) / 1000); // divide by 1000 because it is in milliseconds.
+			$('#time').text(time_pass);
+		}, 1000);
+
+
 		$('#board img').click(function() {
+			console.log($(this).data('tile').num);
 			var image = $(this);
 			var tile = image.data('tile');
 
@@ -72,9 +84,15 @@ $(document).ready(function() {
 			}
 
 			stats(no, remain, yes);
-			if (yes == 8 || remain == 0) {
+			if (yes == 8 || remain == 0) { // if all matches are found
 				console.log('you won');
-				$('#board').empty();
+				var board = $('#board');
+				$('#won').css('visibility', 'visible');
+				window.setTimeout(function() {
+					board.empty();
+					tiles = [];
+				}, 1000);
+				window.clearInterval(timer);
 			}
 		});
 	});
@@ -115,4 +133,9 @@ $(document).ready(function() {
 			prev_img = image;
 		}
 	}
+
+	function onTimer() {
+
+	}
+
 });

@@ -15,20 +15,23 @@
 	<body>
 		<a name="top"></a>
 		<h1>Memory Game!</h1>
-		<p>Try out your memorization skills by pressing the play button below!</p>
-		<p>For instructions on how to play, scroll to the bottom of the page and press "Instructions". Have fun!</p>
+		<p>Try out your memorization skills by pressing the play button below!
+		   To start a new game, press the <p style="color: blue; background-color: black;">START</p> button!</p>
+		<p>For instructions on how to play, scroll to the bottom of the page and press</p>
+		<p style="color: blue; background-color: black;">INSTRUCTIONS</p>
 		<div style="clear: both">
-			<button id="start" style="float: left" class="btn btn-default">START</button>
-			<button nav="#bot" id="rules" style="float: right" class="btn btn-default"><a href="#bot">INSTRUCTIONS</a></button>
+			<a id='start'>START</a>
+			<a id='start' href="#bot" style="float: right">INSTRUCTIONS</a>
 		</div><hr />
 
-		<br>
-		<br>
 
+		<div id="won" style="visibility: hidden"><p style="font-size: 50px; color: red; background-color: black">You Won! Press START to play again!</p></div>
 		<p>Time: <span id="time"></span></p>  
 		<p>Matches: <span id="match"></span>
 		<p>Remaining: <span id="remain"></span></p>  
 		<p>Missed: <span id="miss"></span></p> 
+
+		<br>
 
 		<div id="board"></div>
 		<a name="bot"></a>
@@ -39,7 +42,8 @@
 			<p>This is a memory game. You have to find all 8 matches in order to win.
 				Click on a tile, one at a time, until you have flipped two over. If they match, they stay
 				face up and you solved a match. If the tiles did not match, they both will flip back over.
-				Try to find all the matches with the fewest misses, and lowest time. Good luck!</p>
+				Try to find all the matches with the fewest misses, and lowest time. 
+				To start over at any time, just press the START button again! Good luck!</p>
 			<button nav="#top" id="rules" style="float: right" class="btn btn-default"><a href="#top">BACK TO TOP</a></button>
 		</section>
 
