@@ -1,0 +1,50 @@
+<!doctype html>
+
+<html>
+	<head lang='en'>
+		
+		<meta charset="UTF-8">
+		<meta name="author" content="Michael Andrea">
+		<meta name="description" content="Memory Tile Game">
+		<title>Memory Game</title>
+		<link rel="stylesheet" type='text/css' href="css/main.css">
+		<link rel="shortcut icon" href="img/tile1.jpg">
+
+	</head>
+
+	<body>
+		<a name="top"></a>
+		<h1>Memory Game!</h1>
+		<p>Try out your memorization skills by pressing the play button below!</p>
+		<p>For instructions on how to play, scroll to the bottom of the page and press "Instructions". Have fun!</p>
+		<div style="clear: both">
+			<button id="start" style="float: left" class="btn btn-default">START</button>
+			<button nav="#bot" id="rules" style="float: right" class="btn btn-default"><a href="#bot">INSTRUCTIONS</a></button>
+		</div><hr />
+
+		<br>
+		<br>
+
+		<p>Time: <span id="time"></span></p>  
+		<p>Matches: <span id="match"></span>
+		<p>Remaining: <span id="remain"></span></p>  
+		<p>Missed: <span id="miss"></span></p> 
+
+		<div id="board"></div>
+		<a name="bot"></a>
+		<br>
+		<br>
+
+		<section name="rules2" id="rules2">
+			<p>This is a memory game. You have to find all 8 matches in order to win.
+				Click on a tile, one at a time, until you have flipped two over. If they match, they stay
+				face up and you solved a match. If the tiles did not match, they both will flip back over.
+				Try to find all the matches with the fewest misses, and lowest time. Good luck!</p>
+			<button nav="#top" id="rules" style="float: right" class="btn btn-default"><a href="#top">BACK TO TOP</a></button>
+		</section>
+
+		<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/2.4.1/lodash.min.js"></script>
+		<script src="js/app.js"></script>
+	</body>
+</html>

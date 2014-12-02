@@ -1,0 +1,42 @@
+@import url(http://fonts.googleapis.com/css?family=Lato:300,400);
+
+body {
+	font-family: 'Lato', 'Helvetica Neue', 'Helvetica', sans-serif;
+	font-size: 18px;
+	font-weight: 500;
+	color: orange;
+	
+	margin: 25%;
+	margin-top: auto;
+	
+	background: url(http://wallpoper.com/images/00/39/62/52/textures_00396252.jpg);
+	background-size: 100% 100%;
+	background-attachment: fixed;
+}
+
+h1 {
+	color: yellow;
+	font-weight: 500;
+	margin-left: 30%;
+	display: inline-block;
+}
+
+button {
+	color: red;
+	font-weight: 700;
+}
+
+p {
+	display: inline-block;
+	margin-left: 10%;
+}
+
+.rules2 {
+	visibility: hidden;
+}
+
+#board img {
+	width: 20%;
+	height: 20%;
+	padding: 2px;
+}
